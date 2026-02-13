@@ -8,54 +8,61 @@
 
 using namespace std;
 
-double tothepow(double n1, double n2)
-{
-	cout << pow(n1, n2) << "\n";
-	Sleep(1000);
-	return pow(n1, n2);
-}
 
-double square(double n1)
-{
-	cout << pow(n1, 2) << "\n";
-	Sleep(1000);
-	return pow(n1, 2);
-}
+class Calculations{
+public:
+	double tothepow(double n1, double n2)
+	{
+		cout << pow(n1, n2) << "\n";
+		Sleep(1000);
+		return pow(n1, n2);
+	}
 
-double squrt(double n1)
-{
-	cout << sqrt(n1) << "\n";
-	Sleep(1000);
-	return sqrt(n1);
-}
+	double square(double n1)
+	{
+		cout << pow(n1, 2) << "\n";
+		Sleep(1000);
+		return pow(n1, 2);
+	}
 
-double sum(double n1, double n2)
-{	
-	cout << n1 + n2 << "\n";
-	Sleep(1000);
-	return n1 + n2;
-}
+	double squrt(double n1)
+	{
+		cout << sqrt(n1) << "\n";
+		Sleep(1000);
+		return sqrt(n1);
+	}
 
-double subtraction(double n1, double n2)
-{	
-	cout << n1 - n2 << "\n";
-	Sleep(1000);
-	return n1 - n2;
-}
+	double sum(double n1, double n2)
+	{
+		cout << n1 + n2 << "\n";
+		Sleep(1000);
+		return n1 + n2;
+	}
 
-double division(double n1, double n2)
-{	
-	cout << n1 / n2 << "\n";
-	Sleep(1000);
-	return n1 / n2;
-}
+	double subtraction(double n1, double n2)
+	{
+		cout << n1 - n2 << "\n";
+		Sleep(1000);
+		return n1 - n2;
+	}
 
-double multiplication(double n1, double n2)
-{	
-	cout << n1 * n2 << "\n";
-	Sleep(1000);
-	return n1 * n2;
-}
+	double division(double n1, double n2)
+	{
+		cout << n1 / n2 << "\n";
+		Sleep(1000);
+		return n1 / n2;
+	}
+
+	double multiplication(double n1, double n2)
+	{
+		cout << n1 * n2 << "\n";
+		Sleep(1000);
+		return n1 * n2;
+	}
+
+};
+
+Calculations CalculationsObject;
 
 void GreetingAndChooseOperation()
 {
@@ -80,7 +87,7 @@ void GreetingAndChooseOperation()
 			cin >> n1;
 			cout << "Enter 2nd Number:";
 			cin >> n2;
-			sum(n1, n2);
+			CalculationsObject.sum(n1, n2);
 			cout << "Do you want to try again? Y/N";
 			cin >> tryagain;
 			transform(tryagain.begin(), tryagain.end(), tryagain.begin(), ::tolower);
@@ -104,7 +111,7 @@ void GreetingAndChooseOperation()
 			cin >> n1;
 			cout << "Enter 2nd Number:";
 			cin >> n2;
-			subtraction(n1, n2);
+			CalculationsObject.subtraction(n1, n2);
 			cout << "Do you want to try again? Y/N";
 			cin >> tryagain;
 			transform(tryagain.begin(), tryagain.end(), tryagain.begin(), ::tolower);
@@ -127,7 +134,7 @@ void GreetingAndChooseOperation()
 			cin >> n1;
 			cout << "Enter 2nd Number:";
 			cin >> n2;
-			division(n1, n2);
+			CalculationsObject.division(n1, n2);
 			cout << "Do you want to try again? Y/N";
 			cin >> tryagain;
 			transform(tryagain.begin(), tryagain.end(), tryagain.begin(), ::tolower);
@@ -150,7 +157,7 @@ void GreetingAndChooseOperation()
 			cin >> n1;
 			cout << "Enter 2nd Number:";
 			cin >> n2;
-			multiplication(n1, n2);
+			CalculationsObject.multiplication(n1, n2);
 			cout << "Do you want to try again? Y/N";
 			cin >> tryagain;
 			transform(tryagain.begin(), tryagain.end(), tryagain.begin(), ::tolower);
@@ -170,7 +177,7 @@ void GreetingAndChooseOperation()
 
 			cout << "Enter a number to Square Root:";
 			cin >> n1;
-			squrt(n1);
+			CalculationsObject.squrt(n1);
 			cout << "Do you want to try again? Y/N";
 			cin >> tryagain;
 			transform(tryagain.begin(), tryagain.end(), tryagain.begin(), ::tolower);
@@ -190,7 +197,7 @@ void GreetingAndChooseOperation()
 
 			cout << "Enter a number to square:";
 			cin >> n1;
-			square(n1);
+			CalculationsObject.square(n1);
 			cout << "Do you want to try again? Y/N";
 			cin >> tryagain;
 			transform(tryagain.begin(), tryagain.end(), tryagain.begin(), ::tolower);
@@ -214,7 +221,7 @@ void GreetingAndChooseOperation()
 			cin >> n1;
 			cout << "Enter what to power it by:";
 			cin >> n2;
-			tothepow(n1, n2);
+			CalculationsObject.tothepow(n1, n2);
 			cout << "Do you want to try again? Y/N";
 			cin >> tryagain;
 			transform(tryagain.begin(), tryagain.end(), tryagain.begin(), ::tolower);
@@ -250,7 +257,7 @@ void GreetingAndChooseOperation()
 	
 
 int main()
-{
+{	
 	GreetingAndChooseOperation();
 	return 0;
 }
