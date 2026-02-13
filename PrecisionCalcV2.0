@@ -3,9 +3,31 @@
 #include <windows.h>
 #include <cctype>
 #include <algorithm>
+#include <cmath>
 
 
 using namespace std;
+
+double tothepow(double n1, double n2)
+{
+	cout << pow(n1, n2) << "\n";
+	Sleep(1000);
+	return pow(n1, n2);
+}
+
+double square(double n1)
+{
+	cout << pow(n1, 2) << "\n";
+	Sleep(1000);
+	return pow(n1, 2);
+}
+
+double squrt(double n1)
+{
+	cout << sqrt(n1) << "\n";
+	Sleep(1000);
+	return sqrt(n1);
+}
 
 double sum(double n1, double n2)
 {	
@@ -43,8 +65,9 @@ void GreetingAndChooseOperation()
 	while (isusing)
 	{
 		cout << "Welcome to my C++ Calculator\n";
+		system("cls");
 		cout << "Which operation do you want to do?\n";
-		cout << "e.g +-/*:";
+		cout << "e.g +-/*, sqrt, square, power:";
 		cin >> operation;
 
 		if (operation == "+")
@@ -140,6 +163,70 @@ void GreetingAndChooseOperation()
 				break;
 			}
 		}
+		else if (operation == "sqrt")
+		{
+			string tryagain;
+			double n1;
+
+			cout << "Enter a number to Square Root:";
+			cin >> n1;
+			squrt(n1);
+			cout << "Do you want to try again? Y/N";
+			cin >> tryagain;
+			transform(tryagain.begin(), tryagain.end(), tryagain.begin(), ::tolower);
+			if (tryagain == "y")
+			{
+				continue;
+			}
+			else if (tryagain == "n")
+			{
+				break;
+			}
+		}
+		else if (operation == "square")
+		{	
+			double n1;
+			string tryagain;
+
+			cout << "Enter a number to square:";
+			cin >> n1;
+			square(n1);
+			cout << "Do you want to try again? Y/N";
+			cin >> tryagain;
+			transform(tryagain.begin(), tryagain.end(), tryagain.begin(), ::tolower);
+			if (tryagain == "y")
+			{
+				continue;
+			}
+			else if (tryagain == "n")
+			{
+				break;
+			}
+
+		}
+		else if (operation == "power")
+		{
+			double n1;
+			double n2;
+			string tryagain;
+
+			cout << "Enter a number:";
+			cin >> n1;
+			cout << "Enter what to power it by:";
+			cin >> n2;
+			tothepow(n1, n2);
+			cout << "Do you want to try again? Y/N";
+			cin >> tryagain;
+			transform(tryagain.begin(), tryagain.end(), tryagain.begin(), ::tolower);
+			if (tryagain == "y")
+			{
+				continue;
+			}
+			else if (tryagain == "n")
+			{
+				break;
+			}
+		}
 		else {
 			string tryagain;
 
@@ -165,6 +252,5 @@ void GreetingAndChooseOperation()
 int main()
 {
 	GreetingAndChooseOperation();
-
 	return 0;
 }
