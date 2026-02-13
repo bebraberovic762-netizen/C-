@@ -5,52 +5,41 @@ using namespace std;
 
 void Greeting()
 {
-	cout << "Hello World!\n";
+    cout << "Hello World!\n";
 }
 
 string NameChecker()
 {
-	string name;
-
-	cout << "Please enter your name:\n";
-	cin >> name;
-	cout << "Hello ";
-	cout << name+"\n";
-
-	return name;
+    string name;
+    cout << "Please enter your name:\n";
+    cin >> name;
+    return name;
 }
 
-int AgeChecker()
+void AgeChecker(string name)  // Pass name as parameter
 {
-	int age;
+    int age;
+    cout << "Hello " << name << ", please enter your age for evaluation:";
+    cin >> age;
 
-	cout << "Please enter your age for evaluation:";
-	cin >> age;
-
-	if (age <= 18) {
-		cout << "You are a teenager\n";
-		cout << age;
-	}
-	else if (age > 50 and age < 100) {
-		cout << "You are an elder sir.\n";
-		cout << "you are ";
-		cout << age;
-		cout << " years old.";
-	}
-	else if (age >= 100) {
-		cout << "Are you really ";
-		cout << age;
-		cout << "?";
-	}
-
-	return age;
+    if (age <= 18) {
+        cout << "You are a teenager\n";
+        cout << "Age: " << age << endl;
+    }
+    else if (age > 50 and age < 100) {
+        cout << "You are an elder sir.\n";
+        cout << "you are " << age << " years old.\n";
+    }
+    else if (age >= 100) {
+        cout << "Are you really " << age << "?\n";
+    }
 }
 
 int main()
 {
-	Greeting();
-	NameChecker();
-	AgeChecker();
+    Greeting();
+    string userName = NameChecker();
+    AgeChecker(userName);
 
-	return 0;
+    return 0;
 }
