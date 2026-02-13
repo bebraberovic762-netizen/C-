@@ -1,0 +1,170 @@
+#include <iostream>
+#include <string>
+#include <windows.h>
+#include <cctype>
+#include <algorithm>
+
+
+using namespace std;
+
+double sum(double n1, double n2)
+{	
+	cout << n1 + n2 << "\n";
+	Sleep(1000);
+	return n1 + n2;
+}
+
+double subtraction(double n1, double n2)
+{	
+	cout << n1 - n2 << "\n";
+	Sleep(1000);
+	return n1 - n2;
+}
+
+double division(double n1, double n2)
+{	
+	cout << n1 / n2 << "\n";
+	Sleep(1000);
+	return n1 / n2;
+}
+
+double multiplication(double n1, double n2)
+{	
+	cout << n1 * n2 << "\n";
+	Sleep(1000);
+	return n1 * n2;
+}
+
+void GreetingAndChooseOperation()
+{
+	string operation;
+	bool isusing = true;
+
+	while (isusing)
+	{
+		cout << "Welcome to my C++ Calculator\n";
+		cout << "Which operation do you want to do?\n";
+		cout << "e.g +-/*:";
+		cin >> operation;
+
+		if (operation == "+")
+		{
+			double n1;
+			double n2;
+			string tryagain;
+
+			cout << "Enter 1st Number:";
+			cin >> n1;
+			cout << "Enter 2nd Number:";
+			cin >> n2;
+			sum(n1, n2);
+			cout << "Do you want to try again? Y/N";
+			cin >> tryagain;
+			transform(tryagain.begin(), tryagain.end(), tryagain.begin(), ::tolower);
+			if (tryagain == "y")
+			{
+				continue;
+			}
+			else if (tryagain == "n")
+			{
+				break;
+			}
+			
+		}
+		else if (operation == "-")
+		{
+			double n1;
+			double n2;
+			string tryagain;
+
+			cout << "Enter 1st Number:";
+			cin >> n1;
+			cout << "Enter 2nd Number:";
+			cin >> n2;
+			subtraction(n1, n2);
+			cout << "Do you want to try again? Y/N";
+			cin >> tryagain;
+			transform(tryagain.begin(), tryagain.end(), tryagain.begin(), ::tolower);
+			if (tryagain == "y")
+			{
+				continue;
+			}
+			else if (tryagain == "n")
+			{
+				break;
+			}
+		}
+		else if (operation == "/")
+		{
+			double n1;
+			double n2;
+			string tryagain;
+
+			cout << "Enter 1st Number:";
+			cin >> n1;
+			cout << "Enter 2nd Number:";
+			cin >> n2;
+			division(n1, n2);
+			cout << "Do you want to try again? Y/N";
+			cin >> tryagain;
+			transform(tryagain.begin(), tryagain.end(), tryagain.begin(), ::tolower);
+			if (tryagain == "y")
+			{
+				continue;
+			}
+			else if (tryagain == "n")
+			{
+				break;
+			}
+		}
+		else if (operation == "*")
+		{
+			double n1;
+			double n2;
+			string tryagain;
+
+			cout << "Enter 1st Number:";
+			cin >> n1;
+			cout << "Enter 2nd Number:";
+			cin >> n2;
+			multiplication(n1, n2);
+			cout << "Do you want to try again? Y/N";
+			cin >> tryagain;
+			transform(tryagain.begin(), tryagain.end(), tryagain.begin(), ::tolower);
+			if (tryagain == "y")
+			{
+				continue;
+			}
+			else if (tryagain == "n")
+			{
+				break;
+			}
+		}
+		else {
+			string tryagain;
+
+			cout << "what?\n";
+			Sleep(1000);
+			cout << "Do you want to try again? Y/N";
+			cin >> tryagain;
+			transform(tryagain.begin(), tryagain.end(), tryagain.begin(), ::tolower);
+			if (tryagain == "y")
+			{
+				continue;
+			}
+			else if (tryagain == "n")
+			{
+				break;
+			}
+		}
+
+	}
+	}
+	
+
+int main()
+{
+	GreetingAndChooseOperation();
+
+	return 0;
+}
